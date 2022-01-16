@@ -1,0 +1,60 @@
+{
+  "webtoon": [
+    {
+      "id": 1,
+      "title": "나 혼자만 레벨업",
+      "category": "학원/판타지",
+      "author": ["현군", "장성락(REDICE STUDIO)", "추공"],
+      "tags": ["현대 판타지", "헌터", "어반 판타지"],
+      "thumbnail": "",
+      "views": 41624000,
+      "likes": 1235000,
+      "isHot": true,
+      "isNew": false,
+      "isEnded": true
+    },
+    {
+      "id": 2,
+      "title": "템빨",
+      "category": "학원/판타지",
+      "author": ["이동욱(Redice Studio)", "Team Argo", "박새날"],
+      "tags": ["게임판타지"],
+      "thumbnail": "",
+      "views": 7966000,
+      "likes": 225000,
+      "isHot": true,
+      "isNew": false,
+      "isEnded": false
+    },
+    {
+      "id": 3,
+      "title": "도굴왕",
+      "category": "학원/판타지",
+      "author": ["윤쓰(Redice Studio)", "3B2S", "산지직송"],
+      "tags": ["현대 판타지", "액션"],
+      "thumbnail": "",
+      "views": 8323000,
+      "likes": 250000,
+      "isHot": true,
+      "isNew": false,
+      "isEnded": false
+    }
+  ],
+  "comic": [
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "novel": [
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
