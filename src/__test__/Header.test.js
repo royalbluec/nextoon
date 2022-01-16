@@ -1,14 +1,33 @@
 import { render, screen } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Header from '../components/Header/Header';
 
 test('renders header', () => {
-  render(<Header />);
+  render(
+    <Router>
+      <Header />
+    </Router>
+  );
   const header = screen.getByRole('header');
   expect(header).toBeInTheDocument();
 });
 
 test('renders navigation', () => {
-  render(<Header />);
+  render(
+    <Router>
+      <Header />
+    </Router>
+  );
   const navigation = screen.getByRole('navigation');
   expect(navigation).toBeInTheDocument();
+});
+
+test('renders logo', () => {
+  render(
+    <Router>
+      <Header />
+    </Router>
+  );
+  const logo = screen.getByRole('logo');
+  expect(logo).toBeInTheDocument();
 });
