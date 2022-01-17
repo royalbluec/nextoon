@@ -1,13 +1,11 @@
 import React from 'react';
-import { useQuery } from 'react-query';
 
 import Banner from '../components/Banner/Banner';
 import LolomoRow from '../components/LolomoRow/LolomoRow';
+import useData from '../hooks/useData';
 
 function HomePage() {
-  const { isLoading, error, data } = useQuery('repoData', () =>
-    fetch('http://localhost:3001/db').then((res) => res.json())
-  );
+  const { isLoading, error, data } = useData();
 
   if (isLoading) return 'Loading...';
 

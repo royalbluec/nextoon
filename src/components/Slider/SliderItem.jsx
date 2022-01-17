@@ -1,7 +1,6 @@
 import React from 'react';
 
 function SliderItem({ item }) {
-  console.log(item);
   return (
     <div role="sliderItem">
       {item && (
