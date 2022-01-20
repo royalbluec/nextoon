@@ -18,7 +18,7 @@ test('renders navigation', () => {
       <Header />
     </Router>
   );
-  const navigation = screen.getByRole('navigation');
+  const navigation = screen.getByRole('primary-navigation');
   expect(navigation).toBeInTheDocument();
 });
 
