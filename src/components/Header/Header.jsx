@@ -17,7 +17,7 @@ const HeaderBlock = styled.header`
   justify-content: space-between;
   height: 60px;
   padding: 0 60px;
-  background-color: black;
+  background-color: #141414;
 `;
 
 export default Header;
