@@ -80,12 +80,11 @@ const NavItem = styled.li`
   a {
     margin-left: 20px;
     font-size: 0.8rem;
-    color: #e5e5e5;
     text-decoration: none;
 
-    :hover {
-      color: #b3b3b3;
-    }
+    // :hover {
+    //   color: #b3b3b3;
+    // }
 
     &.active {
       color: red;
