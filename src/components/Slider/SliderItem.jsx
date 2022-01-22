@@ -12,7 +12,9 @@ function SliderItem({ item }) {
   );
 }
 
-const SliderItemBlock = styled.div``;
+const SliderItemBlock = styled.div`
+  margin: 0 2px;
+`;
 
 const SliderItemImg = styled.img`
   width: 293px;

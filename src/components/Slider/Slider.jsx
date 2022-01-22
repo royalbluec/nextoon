@@ -1,26 +1,47 @@
-import styled from 'styled-components';
+import { useState } from 'react';
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import styled from 'styled-components';
 
 import SliderContent from './SliderContent';
+import PageIndicator from './PageIndicator';
 
 function Slider({ data }) {
+  const [pageNumber, setPageNumber] = useState(0);
+
+  const totalItmeNumber = 6;
+  const totalPageNumber = new Array(
+    Math.ceil(data.length / totalItmeNumber)
+  ).fill(1);
+
+  const goPrevPage = () => {
+    if (pageNumber !== 0) {
+      setPageNumber(pageNumber - 1);
+    }
+  };
+
+  const goNextPage = () => {
+    if (pageNumber !== totalPageNumber.length - 1) {
+      setPageNumber(pageNumber + 1);
+    }
+  };
+
   return (
     <SliderBlock role="slider">
-      <HandlePrev>
-        <LeftAngleIcon />
-      </HandlePrev>
-      <PageIndicator>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </PageIndicator>
+      {pageNumber !== 0 && (
+        <HandlePrev>
+          <LeftAngleIcon onClick={goPrevPage} />
+        </HandlePrev>
+      )}
+      <PageIndicator
+        totalPageNumber={totalPageNumber}
+        pageNumber={pageNumber}
+      />
       <SliderContent data={data} />
-      <HandleNext>
-        <RightAngleIcon />
-      </HandleNext>
+      {pageNumber !== totalPageNumber.length - 1 && (
+        <HandleNext>
+          <RightAngleIcon onClick={goNextPage} />
+        </HandleNext>
+      )}
     </SliderBlock>
   );
 }
@@ -72,21 +93,6 @@ const RightAngleIcon = styled(FaAngleRight)`
   &:hover {
     cursor: pointer;
   }
-`;
-
-const PageIndicator = styled.ul`
-  display: flex;
-  position: absolute;
-  right: 62px;
-  margin: -12px 0 12px 0;
-  padding: 0;
-  list-style-type: none; 
-
-  li {
-    width: 12px;
-    height: 2px;
-    margin-left: 1px;
-    background: #4d4d4d;
 `;
 
 export default Slider;
