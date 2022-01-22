@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Banner from '../components/Banner/Banner';
 import LolomoRow from '../components/LolomoRow/LolomoRow';
@@ -14,10 +15,17 @@ function HomePage() {
   return (
     <div>
       <Banner />
-      HomePage
+      <Billboard />
+      <LolomoRow data={data.webtoon} />
+      <LolomoRow data={data.webtoon} />
       <LolomoRow data={data.webtoon} />
     </div>
   );
 }
+
+const Billboard = styled.span`
+  display: block;
+  padding-bottom: 40%;
+`;
 
 export default HomePage;

@@ -1,9 +1,11 @@
-import Slider from '../Slider/Slider';
+import RowHeader from './RowHeader';
+import RowContainer from './RowContainer';
 
 function LolomoRow({ data }) {
   return (
     <div role="lolomoRow">
-      <Slider data={data} />
+      <RowHeader />
+      <RowContainer data={data} />
     </div>
   );
 }

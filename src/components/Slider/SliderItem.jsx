@@ -1,17 +1,23 @@
-import React from 'react';
+import styled from 'styled-components';
 
 function SliderItem({ item }) {
   return (
-    <div role="sliderItem">
+    <SliderItemBlock role="sliderItem">
       {item && (
         <div>
-          <div>{item.title}</div>
-          <div>{item.author}</div>
-          <div>{item.category}</div>
+          <SliderItemImg alt={item.title} src={item.thumbnail} />
         </div>
       )}
-    </div>
+    </SliderItemBlock>
   );
 }
+
+const SliderItemBlock = styled.div``;
+
+const SliderItemImg = styled.img`
+  width: 293px;
+  height: 165px;
+  object-fit: cover;
+`;
 
 export default SliderItem;
