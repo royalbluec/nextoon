@@ -12,6 +12,8 @@ function Slider({ data }) {
   const totalPageNumber = new Array(
     Math.ceil(data.length / totalItmeNumber)
   ).fill(1);
+  const restOfItem =
+    data.length - totalItmeNumber * Math.floor(data.length / totalItmeNumber);
 
   const goPrevPage = () => {
     if (pageNumber !== 0) {
@@ -25,6 +27,9 @@ function Slider({ data }) {
     }
   };
 
+  // data page에 따라 filtering 처리하기
+  // onmouseenter, onmouseover, onmouseout, onmousemove에 따라 angle-icon, page-indicator 처리하기
+
   return (
     <SliderBlock role="slider">
       {pageNumber !== 0 && (
@@ -36,7 +41,12 @@ function Slider({ data }) {
         totalPageNumber={totalPageNumber}
         pageNumber={pageNumber}
       />
-      <SliderContent data={data} />
+      <SliderContent
+        data={data}
+        pageNumber={pageNumber}
+        restOfItem={restOfItem}
+        totalPage={totalPageNumber.length}
+      />
       {pageNumber !== totalPageNumber.length - 1 && (
         <HandleNext>
           <RightAngleIcon onClick={goNextPage} />
@@ -62,6 +72,11 @@ const HandlePrev = styled.span`
   background: rgba(20, 20, 20, 0.5);
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
+  z-index: 2;
+
+  &:hover {
+    background: rgba(20, 20, 20, 0.7);
+  }
 `;
 
 const HandleNext = styled.span`
@@ -75,13 +90,21 @@ const HandleNext = styled.span`
   background: rgba(20, 20, 20, 0.5);
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
+  z-index: 2;
+
+  &:hover {
+    background: rgba(20, 20, 20, 0.7);
+  }
 `;
 
 const LeftAngleIcon = styled(FaAngleLeft)`
   width: 40px;
   height: 40px;
+  color: white;
 
   &:hover {
+    width: 60px;
+    height: 60px;
     cursor: pointer;
   }
 `;
@@ -89,8 +112,11 @@ const LeftAngleIcon = styled(FaAngleLeft)`
 const RightAngleIcon = styled(FaAngleRight)`
   width: 40px;
   height: 40px;
+  color: white;
 
   &:hover {
+    width: 60px;
+    height: 60px;
     cursor: pointer;
   }
 `;
