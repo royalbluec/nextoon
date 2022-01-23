@@ -15,6 +15,8 @@ const RowHeaderBlock = styled.div`
 
 const RowTitle = styled.h2`
   margin: 0;
+  padding-left: 8px;
+  color: white;
 `;
 
 export default RowHeader;

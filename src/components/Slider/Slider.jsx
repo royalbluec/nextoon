@@ -9,11 +9,16 @@ function Slider({ data }) {
   const [pageNumber, setPageNumber] = useState(0);
 
   const totalItmeNumber = 6;
-  const totalPageNumber = new Array(
-    Math.ceil(data.length / totalItmeNumber)
-  ).fill(1);
-  const restOfItem =
-    data.length - totalItmeNumber * Math.floor(data.length / totalItmeNumber);
+  let totalPageNumber;
+  let restOfItem;
+
+  if (data) {
+    totalPageNumber = new Array(Math.ceil(data.length / totalItmeNumber)).fill(
+      1
+    );
+    restOfItem =
+      data.length - totalItmeNumber * Math.floor(data.length / totalItmeNumber);
+  }
 
   const goPrevPage = () => {
     if (pageNumber !== 0) {
@@ -41,13 +46,15 @@ function Slider({ data }) {
         totalPageNumber={totalPageNumber}
         pageNumber={pageNumber}
       />
-      <SliderContent
-        data={data}
-        pageNumber={pageNumber}
-        restOfItem={restOfItem}
-        totalPage={totalPageNumber.length}
-      />
-      {pageNumber !== totalPageNumber.length - 1 && (
+      {totalPageNumber && (
+        <SliderContent
+          data={data}
+          pageNumber={pageNumber}
+          restOfItem={restOfItem}
+          totalPage={totalPageNumber.length}
+        />
+      )}
+      {totalPageNumber && pageNumber !== totalPageNumber.length - 1 && (
         <HandleNext>
           <RightAngleIcon onClick={goNextPage} />
         </HandleNext>
@@ -103,8 +110,6 @@ const LeftAngleIcon = styled(FaAngleLeft)`
   color: white;
 
   &:hover {
-    width: 60px;
-    height: 60px;
     cursor: pointer;
   }
 `;
@@ -115,8 +120,6 @@ const RightAngleIcon = styled(FaAngleRight)`
   color: white;
 
   &:hover {
-    width: 60px;
-    height: 60px;
     cursor: pointer;
   }
 `;

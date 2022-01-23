@@ -3,13 +3,14 @@ import styled from 'styled-components';
 function PageIndicator({ totalPageNumber, pageNumber }) {
   return (
     <PageIndicatorBlock>
-      {totalPageNumber.map((el, i) =>
-        pageNumber === i ? (
-          <ActiveIndicator key={i}></ActiveIndicator>
-        ) : (
-          <Indicator key={i}></Indicator>
-        )
-      )}
+      {totalPageNumber &&
+        totalPageNumber.map((el, i) =>
+          pageNumber === i ? (
+            <ActiveIndicator key={i}></ActiveIndicator>
+          ) : (
+            <Indicator key={i}></Indicator>
+          )
+        )}
     </PageIndicatorBlock>
   );
 }

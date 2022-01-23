@@ -19,6 +19,11 @@ function HomePage() {
       <LolomoRow data={data.webtoon} />
       <LolomoRow data={data.webtoon} />
       <LolomoRow data={data.webtoon} />
+      <LolomoRow data={data.webtoon} />
+      <LolomoRow data={data.webtoon} />
+      <LolomoRow data={data.webtoon} />
+      <LolomoRow data={data.webtoon} />
+      <LolomoRow data={data.webtoon} />
     </div>
   );
 }

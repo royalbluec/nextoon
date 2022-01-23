@@ -66,6 +66,7 @@ const NavLogo = styled(Link)`
   margin-right: 20px;
   font-size: 1.6rem;
   color: red;
+  font-weight: bold;
   text-decoration: none;
 `;
 
