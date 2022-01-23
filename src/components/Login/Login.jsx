@@ -31,14 +31,15 @@ const LoginHeader = styled.div`
   left: 0;
   width: 100%;
   height: 80px;
+  padding: 0 4%;
+  box-sizing: border-box;
 `;
 
 const LoginLogo = styled(Link)`
-  margin-left: 4%;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 2.5rem;
   color: red;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-decoration: none;
 `;
 
 const LoginBody = styled.div`
